@@ -193,16 +193,13 @@ Example `pvc-ebs.yml`
 kind: PersistentVolumeClaim
 apiVersion: v1
 metadata:
-  name: pvs-ebs
+  name: pvc-ebs
 spec:
   accessModes:
     - ReadWriteOnce
   resources:
     requests:
       storage: 1Gi
-  selector:
-    matchLabels:
-      release: "stable"
 ```
 
 
@@ -220,6 +217,7 @@ Example `pod-ebs.yml`
 
 ```yaml
 apiVersion: v1
+kind: Pod
 metadata:
   name: mypod
 spec:
